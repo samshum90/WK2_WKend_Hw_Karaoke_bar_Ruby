@@ -48,4 +48,16 @@ class TestRoom < Minitest::Test
     assert_equal(1,@japan.guest_count)
   end
 
+  def test_check_favourite_song()
+    @japan.put_song_into_room(@marry_you)
+    assert_equal("Whooooo! I love this song!", @japan.check_favourite_song(@guest1))
+  end
+
+  def test_remove_guest_from_room()
+    @japan.put_guest_into_room(@guest1)
+    @japan.remove_guest_from_room(@guest1)
+    assert_equal(0, @japan.guest_count)
+  end
+
+
 end

@@ -33,6 +33,10 @@ class Room
     return result.sum
   end
 
+  def check_favourite_song(guest)
+    return "Whooooo! I love this song!" if @song_selection.include?(guest.favourite_song) == true
+  end
+
   def guest_count
     return @guests.count
   end
@@ -72,6 +76,12 @@ class Room
     else
     end
   end
+
+  def remove_guest_from_room(guest)
+    @guests.delete(guest)
+  end
+
+
 
 
 
